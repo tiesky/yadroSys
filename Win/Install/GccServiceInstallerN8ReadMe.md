@@ -11,7 +11,7 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 ### grant ability to be run
 > Unblock-File .\GccServiceInstallerN8.ps1
 
-### if you want to install/update it on 27999
+### if you want to install/update it on 27999  (note Windows Service Panel GUI must be closed)
 > .\GccServiceInstallerN8.ps1 27999
 
 ---
@@ -23,7 +23,7 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 
 ---
 
-## Extra useful commands
+## Extra useful commands  (note Windows Service Panel GUI must be closed)
 
 > sc.exe create GpsCarControl.Server.ManageService27999 binPath= 'C:\ProgramData\S-TEC GmbH\GpsCarControl\Server\Port_27999\ServerService\GpsCarControl.Server.ServiceN8.exe 27999' start= auto
 
