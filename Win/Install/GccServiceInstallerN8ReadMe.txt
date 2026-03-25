@@ -4,6 +4,7 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 
 Run PowerShell (Version more than 5) as Administrator
 
+grant ability to be run
 > Unblock-File .\GccServiceInstallerN8.ps1
 
 if you want to install/update it on 27999
@@ -20,3 +21,22 @@ sc.exe create GpsCarControl.Server.ManageService27999 binPath= 'C:\ProgramData\S
 sc.exe start GpsCarControl.Server.ManageService27999
 sc.exe stop GpsCarControl.Server.ManageService27999
 sc.exe delete GpsCarControl.Server.ManageService27999
+
+
+--- Automatic ways to download
+
+# 1. Define URL and local path
+$url = "https://github.com/tiesky/yadroSys/raw/refs/heads/master/Win/Install/GccServiceInstallerN8.ps1"
+$scriptPath = "$env:TEMP\GccServiceInstallerN8.ps1"
+
+# 2. Download the script
+Invoke-WebRequest -Uri $url -OutFile $scriptPath
+
+# 3. Unblock the script (remove Mark-of-the-Web)
+Unblock-File -Path $scriptPath
+
+# 4. Execute with port argument (example: 27999)
+& $scriptPath 27999
+
+--- another way if execution policy blocks it
+powershell -ExecutionPolicy Bypass -File $scriptPath 27999
