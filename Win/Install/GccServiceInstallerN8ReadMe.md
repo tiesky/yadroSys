@@ -8,15 +8,17 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 
 ### Run PowerShell (Version more than 5) as Administrator (navigate to the folder with the file)
 
-### grant ability to be run
+### Grant permissions
 > Unblock-File .\GccServiceInstallerN8.ps1
+or
+> powershell -ExecutionPolicy Bypass -File $scriptPath 27999
 
-### if you want to install/update it on 27999  (Windows Service Panel GUI must be closed)
+### INSTALL/UPDATE GccWinService on 27999  (Windows Service Panel GUI must be closed)
 > .\GccServiceInstallerN8.ps1 27999
 
 ---
 
-### Deinstall (Windows Service Panel GUI must be closed)
+### DE-INSTALL GccWinService on 27999 (Windows Service Panel GUI must be closed)
 > sc.exe stop GpsCarControl.Server.ManageService27999
 
 > sc.exe delete GpsCarControl.Server.ManageService27999
@@ -32,6 +34,9 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 > sc.exe stop GpsCarControl.Server.ManageService27999
 
 > sc.exe delete GpsCarControl.Server.ManageService27999
+
+Setting up WinService user (also possible via GUI, but Default should be OK)
+> sc config GpsCarControl.Server.ManageService27999 obj= LocalSystem
 
 ---
 
