@@ -3,7 +3,7 @@
 Instruction how to install it on Windows on port 27999
 
 
-### Download
+### Download (Download raw file)
 https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8.ps1
 
 ### Run PowerShell (Version more than 5) as Administrator (navigate to the folder with the file)
