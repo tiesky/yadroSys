@@ -13,7 +13,7 @@ https://github.com/tiesky/yadroSys/blob/master/Win/Install/GccServiceInstallerN8
 
 or
 
-> powershell -ExecutionPolicy Bypass -File $scriptPath 27999
+> powershell -ExecutionPolicy Bypass -File .\GccServiceInstallerN8.ps1 27999
 
 ### INSTALL/UPDATE GccWinService on 27999  (Windows Service Panel GUI must be closed)
 > .\GccServiceInstallerN8.ps1 27999
