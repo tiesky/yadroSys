@@ -40,24 +40,3 @@ or
 Setting up WinService user (also possible via GUI, but Default should be OK)
 > sc config GpsCarControl.Server.ManageService27999 obj= LocalSystem
 
----
-
-## Automatic way to download
-
-### 1. Define URL and local path
-$url = "https://github.com/tiesky/yadroSys/raw/refs/heads/master/Win/Install/GccServiceInstallerN8.ps1"
-$scriptPath = "$env:TEMP\GccServiceInstallerN8.ps1"
-
-### 2. Download the script
-Invoke-WebRequest -Uri $url -OutFile $scriptPath
-
-### 3. Unblock the script (remove Mark-of-the-Web)
-Unblock-File -Path $scriptPath
-
-### 4. Execute with port argument (example: 27999)
-& $scriptPath 27999
-
----
-
-## another way if execution policy blocks it
-powershell -ExecutionPolicy Bypass -File $scriptPath 27999
