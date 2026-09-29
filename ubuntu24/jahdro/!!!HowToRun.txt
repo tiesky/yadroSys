@@ -1,0 +1,34 @@
+Download the installer, then run it with a port:
+
+```bash
+curl -fsSLo JCoreInstaller.sh https://raw.githubusercontent.com/tiesky/yadroSys/master/ubuntu24/jahdro/JCoreInstaller.sh
+sudo bash JCoreInstaller.sh 27777
+sudo systemctl status JCoreWatchdog27777
+```
+
+Re-running the install command updates the watchdog and restarts that port's
+service. To deliberately check for a newer JCore build, run
+`sudo systemctl restart JCoreWatchdog27777`. A healthy server is never stopped
+because a new binary appears on the CDN or in the local `updates` folder.
+
+
+To remove only the watchdog service:
+
+```bash
+sudo bash JCoreInstaller.sh uninstall 27777
+```
+
+
+
+The installer leaves `/var/lib/www.scanmedia.net/GpsCarControl/Server/Port_27777`
+and `usrjcore27777` in place, so an installation on the same port can reuse them.
+The JCore executable lives at
+`ServerBinary/bin/GpsCarControl.Server27777` beneath that data directory.
+
+
+sudo systemctl stop JCoreWatchdog27777
+sudo systemctl start JCoreWatchdog27777
+
+Shell from usrjcore27777:
+sudo -u usrcore27777 -H bash
+cd /var/lib/www.scanmedia.net/GpsCarControl/Server/Port_27777/ServerBinary/bin/
