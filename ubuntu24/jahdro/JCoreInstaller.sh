@@ -115,6 +115,7 @@ Restart=always
 RestartSec=60
 KillMode=control-group
 TimeoutStopSec=30
+PrivateTmp=yes
 ${capabilities}
 
 [Install]
