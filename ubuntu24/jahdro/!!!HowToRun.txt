@@ -32,3 +32,6 @@ sudo systemctl start JCoreWatchdog27777
 Shell from usrjcore27777:
 sudo -u usrcore27777 -H bash
 cd /var/lib/www.scanmedia.net/GpsCarControl/Server/Port_27777/ServerBinary/bin/
+
+to run manually
+./GpsCarControl.Server27777 start 27777 true
